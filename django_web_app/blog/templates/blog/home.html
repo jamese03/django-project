@@ -1,13 +1,5 @@
-<!doctype html>
-<html>
-  <head>
-      {% if page_title %}
-    <title> {{title}} </title>
-      {% else %}
-      <title> No title for Django Blog  </title>
-      {% endif %}
-  </head>
-  <body>
+{% extends "blog/base.html" %}
+{% block content %}
     {% for post in posts %}
         <h1>
             {{ post.title }}
@@ -19,5 +11,4 @@
             writen by {{ post.author}} at {{ post.date_posted}}
         </div>
     {% endfor %}
-  </body>
-</html>
+{% endblock content %}
